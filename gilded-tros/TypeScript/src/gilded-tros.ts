@@ -4,58 +4,58 @@ export class GildedTros {
   constructor(public items: Array<Item>) {}
 
   public updateQuality(): void {
-    for (const item of this.items) {
+    for (let { name, quality, sellIn } of this.items) {
       if (
-        item.name != "Good Wine" &&
-        item.name != "Backstage passes for Re:Factor" &&
-        item.name != "Backstage passes for HAXX"
+        name != "Good Wine" &&
+        name != "Backstage passes for Re:Factor" &&
+        name != "Backstage passes for HAXX"
       ) {
-        if (item.quality > 0) {
-          if (item.name != "B-DAWG Keychain") {
-            item.quality = item.quality - 1;
+        if (quality > 0) {
+          if (name != "B-DAWG Keychain") {
+            quality = quality - 1;
           }
         }
       } else {
-        if (item.quality < 50) {
-          item.quality = item.quality + 1;
+        if (quality < 50) {
+          quality = quality + 1;
 
-          if (item.name == "Backstage passes for Re:Factor") {
-            if (item.sellIn < 11) {
-              if (item.quality < 50) {
-                item.quality = item.quality + 1;
+          if (name == "Backstage passes for Re:Factor") {
+            if (sellIn < 11) {
+              if (quality < 50) {
+                quality = quality + 1;
               }
             }
 
-            if (item.sellIn < 6) {
-              if (item.quality < 50) {
-                item.quality = item.quality + 1;
+            if (sellIn < 6) {
+              if (quality < 50) {
+                quality = quality + 1;
               }
             }
           }
         }
       }
 
-      if (item.name != "B-DAWG Keychain") {
-        item.sellIn = item.sellIn - 1;
+      if (name != "B-DAWG Keychain") {
+        sellIn = sellIn - 1;
       }
 
-      if (item.sellIn < 0) {
-        if (item.name != "Good Wine") {
+      if (sellIn < 0) {
+        if (name != "Good Wine") {
           if (
-            item.name != "Backstage passes for Re:Factor" ||
-            item.name != "Backstage passes for HAXX"
+            name != "Backstage passes for Re:Factor" ||
+            name != "Backstage passes for HAXX"
           ) {
-            if (item.quality > 0) {
-              if (item.name != "B-DAWG Keychain") {
-                item.quality = item.quality - 1;
+            if (quality > 0) {
+              if (name != "B-DAWG Keychain") {
+                quality = quality - 1;
               }
             }
           } else {
-            item.quality = item.quality - item.quality;
+            quality = quality - quality;
           }
         } else {
-          if (item.quality < 50) {
-            item.quality = item.quality + 1;
+          if (quality < 50) {
+            quality = quality + 1;
           }
         }
       }
