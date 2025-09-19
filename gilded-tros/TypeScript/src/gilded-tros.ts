@@ -18,11 +18,11 @@ export class GildedTros {
           quality += 1;
 
           if (name == "Backstage passes for Re:Factor") {
-            if (sellIn < 11 && quality < 50) {
+            if (sellIn < 11) {
               quality += 1;
             }
 
-            if (sellIn < 6 && quality < 50) {
+            if (sellIn < 6) {
               quality += 1;
             }
           }
