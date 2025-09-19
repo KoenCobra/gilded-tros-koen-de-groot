@@ -51,7 +51,7 @@ export class GildedTros {
               }
             }
           } else {
-            quality -= quality;
+            quality = 0;
           }
         } else {
           if (quality < 50) {
