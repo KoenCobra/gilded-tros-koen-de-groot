@@ -10,26 +10,20 @@ export class GildedTros {
         name != "Backstage passes for Re:Factor" &&
         name != "Backstage passes for HAXX"
       ) {
-        if (quality > 0) {
-          if (name != "B-DAWG Keychain") {
-            quality -= 1;
-          }
+        if (quality > 0 && name != "B-DAWG Keychain") {
+          quality -= 1;
         }
       } else {
         if (quality < 50) {
           quality += 1;
 
           if (name == "Backstage passes for Re:Factor") {
-            if (sellIn < 11) {
-              if (quality < 50) {
-                quality += 1;
-              }
+            if (sellIn < 11 && quality < 50) {
+              quality += 1;
             }
 
-            if (sellIn < 6) {
-              if (quality < 50) {
-                quality += 1;
-              }
+            if (sellIn < 6 && quality < 50) {
+              quality += 1;
             }
           }
         }
@@ -45,10 +39,8 @@ export class GildedTros {
             name != "Backstage passes for Re:Factor" &&
             name != "Backstage passes for HAXX"
           ) {
-            if (quality > 0) {
-              if (name != "B-DAWG Keychain") {
-                quality -= 1;
-              }
+            if (quality > 0 && name != "B-DAWG Keychain") {
+              quality -= 1;
             }
           } else {
             quality = 0;
