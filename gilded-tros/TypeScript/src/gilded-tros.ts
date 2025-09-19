@@ -42,7 +42,7 @@ export class GildedTros {
       if (sellIn < 0) {
         if (name != "Good Wine") {
           if (
-            name != "Backstage passes for Re:Factor" ||
+            name != "Backstage passes for Re:Factor" &&
             name != "Backstage passes for HAXX"
           ) {
             if (quality > 0) {
